@@ -7,6 +7,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
+    // yarn webpack-dev-server --mode development
     static: {
       directory: path.resolve(__dirname, 'public'),
     },

@@ -1,3 +1,7 @@
-import { soma } from './soma';
+import React from 'react';
+import { render } from 'react-dom';
 
-console.log(soma(1, 10))
+import App from './App';
+// JSX: HTMTL dentro do JavaScript (JavaScript XML)
+
+render(<App />, document.getElementById('app'));
