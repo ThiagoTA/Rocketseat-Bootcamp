@@ -20,6 +20,21 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         }
+      },
+      {
+        // yarn add style-loader css-loader
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+            { loader: 'style-loader' }, // Ele vai pegar o css interpretado e vai enjetar dentro do HTML
+            { loader: 'css-loader' } // Ler arquivo css e ler as importações
+        ]
+      },
+      {
+        test: /.*\.(gif|png|jpe?g)$/i, // i: se for maiúsculo
+        use: {
+          loader: 'file-loader',
+        }
       }
     ]
   }

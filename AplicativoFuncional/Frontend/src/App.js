@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+import './App.css';
+import backgroundImage from './assets/background.jpg'
+
 import Header from './Components/Header';
 
 // <>: fragmento para envolver mais componentes mas não atrapalha o efeito visual do dom
@@ -28,6 +31,8 @@ function App() {
   return (
     <> 
     <Header title="Projects" />
+
+    <img width={300} src={backgroundImage} />
 
     <ul>
       {projects.map(project => <li key={project}>{project}</li>)}
