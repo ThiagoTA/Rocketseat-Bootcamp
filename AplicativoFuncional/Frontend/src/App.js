@@ -27,11 +27,20 @@ function App() {
     });
   }, []); // Vai executar essa função somente quando o componente for exibido em tela.
 
-  function handleAddProject() {
-    // projects.push(`Novo projeto ${Date.now()}`) * Altera o project e não é recomendado
+  async function handleAddProject() {
+    // ! projects.push(`Novo projeto ${Date.now()}`) * Altera o project e não é recomendado
 
-    // ...: está copiando todos os projects para dentro desse novo array
-    setProjects([...projects, `Novo projeto ${Date.now()}`]); // Imutabilidade
+    // * ...: está copiando todos os projects para dentro desse novo array
+    // setProjects([...projects, `Novo projeto ${Date.now()}`]); // Imutabilidade
+
+    const response = await api.post('projects', {
+      title: `Novo projeto ${Date.now()}`,
+      owner: "Thiago"
+    });
+
+    const project = response.data;
+
+    setProjects([...projects, project]);
   }
 
   return (
